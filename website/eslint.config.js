@@ -7,6 +7,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import reactPlugin from "eslint-plugin-react";
 import eslint from "@eslint/js";
+import preferArrow from "eslint-plugin-prefer-arrow";
 
 export default tseslint.config(
     eslint.configs.recommended,
@@ -37,6 +38,7 @@ export default tseslint.config(
             "@stylistic": stylistic,
             "react-hooks": reactHooks,
             "react-refresh": reactRefresh,
+            "prefer-arrow": preferArrow
         },
         settings: {
             "react": {
@@ -60,6 +62,17 @@ export default tseslint.config(
                     checksVoidReturn: false,
                 },
             ],
+            "arrow-body-style": ["error", "as-needed"],
+            "func-style": ["error", "expression"],
+            "prefer-arrow/prefer-arrow-functions": [
+                "error",
+                {
+                    "disallowPrototype": true,
+                    "singleReturnOnly": true,
+                    "classPropertiesAllowed": false,
+                    "allowStandaloneDeclarations": false
+                }
+            ]
         },
     },
 );
