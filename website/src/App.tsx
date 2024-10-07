@@ -16,8 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with OdontoPro.  If not, see <https://www.gnu.org/licenses/>.
 
+import React from "react";
+
 const App = () => {
-    return <h1>Hello, World!</h1>;
+    const [num, setNum] = React.useState(0);
+
+    return (
+        <>
+            <h1>Hello, World!: {num}</h1>
+            <button onClick={() => { setNum(num => num + 1); }}>Next</button>
+        </>
+    );
 };
 
 export default App;
