@@ -23,18 +23,14 @@ export default tseslint.config(
     },
     {
         languageOptions: {
-            parserOptions: {
-                projectService: true,
-                tsconfigRootDir: import.meta.dirname,
-            },
-        },
-    },
-    {
-        languageOptions: {
             ecmaVersion: 2020,
             globals: {
                 ...globals.browser,
                 ...globals.serviceworker,
+            },
+            parserOptions: {
+                projectService: true,
+                tsconfigRootDir: import.meta.dirname,
             },
         },
         plugins: {
